@@ -88,6 +88,11 @@ body{
     margin: 0 20px;
     min-width: 470px;
 }
+#current-temp .other{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .future-forecast .weather-forecast{
     display: flex;
     justify-content: space-between;
@@ -104,7 +109,7 @@ body{
     padding: 20px 10px;
     
 }
-.today .others{
+.today .other{
     display: flex;
     flex-direction: column;
     justify-content: center;
