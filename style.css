@@ -10,8 +10,9 @@ body{
     background:url('https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');
     background-repeat: no-repeat;
     background-size:cover;
-    overflow:hidden;
+    overflow: hidden;
     height: 100vh;
+    width: 100vw;
     font-family: 'Poppins', sans-serif;
 }
 .container{
@@ -136,3 +137,94 @@ body{
     text-align: center;
 }
 
+
+
+
+
+@media only screen and  (max-width:730px){
+    
+    .container{
+        padding: 20px;
+        margin: 5px;
+    }
+    .place-container .country {
+        font-size: 10px;
+    }
+
+    
+    .future-forecast{
+        justify-content: start;
+        overflow-y: scroll;
+        height: 200px;
+        padding: 15px 0px;
+    }
+    /* .future-forecast .today{
+        width: 100px;
+        
+    } */
+
+    .today .day{
+        font-size: 14px;
+        padding: 10px 26px;
+    }
+    .future-forecast .today{
+        min-width: auto;
+    }
+    .future-forecast .temp{
+        font-size: 12px;
+    }
+    .future-forecast .day{
+        font-size: 12px;
+    }
+    .weather-forecast-items{
+        height: 158px;
+        width: 150px;
+        padding: 14px !important;
+    }
+    .weather-forecast img{
+        width: 79px;
+        height: 75px;
+    }
+    .future-forecast .today .temp{
+        font-size: 12px;
+    }
+
+    .date-container .time{
+        font-size: 39px;
+    }
+
+    .date-container #am-pm{
+        font-size: 20px;
+    }
+
+    .date-container .date{
+        font-size: 20px;
+    }
+
+    .place-container{
+        text-align: end;
+        margin-top: 15px;
+    }
+
+    .place-container .time-zone{
+        font-size: 17px;
+    }
+
+    .current-info .others{
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .current-info .others .weather-item{
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (max-width: 1400px){
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-x: scroll;
+    }
+}
