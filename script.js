@@ -28,17 +28,22 @@ setInterval(() =>{
 
 
 
-getWeatherData();
-
-function getWeatherData(){
-    navigator.geolocation.watchPosition((posititon) => {
-        let {latitude,longitude} = posititon.coords;
-        const API_KEY = '2a11c896534d88e8a84d47b615f8fc3b';
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
-            console.log(data);
-            showWeatherData(data)
-        });
-    })
+getIP();
+async function getIP(){
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        let latitude = data.latitude;
+        let longitude = data.longitude;
+        
+        getWeatherData(latitude,longitude);
+}
+function getWeatherData(latitude,longitude){
+    
+    const API_KEY = '2a11c896534d88e8a84d47b615f8fc3b';
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+        console.log(data);
+        showWeatherData(data)
+    });
 }
 
 function showWeatherData(data){
